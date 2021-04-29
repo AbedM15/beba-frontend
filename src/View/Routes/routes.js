@@ -1,4 +1,5 @@
 import { Dashboad } from "../Dashboard/Dashboard";
+import CustomerTripReport from "../ReportsView/CustomerTripReport";
 import { TripReportView } from "../ReportsView/TripReport";
 import LoginView from "../User/LoginView";
 import RegisterView from "../User/RegisterView";
@@ -23,6 +24,11 @@ export const routes = [
   {
     path: "/report/trip/:tripId",
     Component: TripReportView,
+    exact: true,
+  },
+  {
+    path: "/report/customer/trips",
+    Component: CustomerTripReport,
     exact: true,
   },
 ];

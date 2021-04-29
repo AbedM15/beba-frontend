@@ -18,3 +18,13 @@ export async function addVehicle(vehicle) {
   );
   return response;
 }
+
+export function getTotalVehicleIncome(vehicle) {
+  const payments = vehicle.trips
+    .flatMap((trip) => trip.payments)
+    .map((payment) => payment.amount);
+
+  return payments.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+}

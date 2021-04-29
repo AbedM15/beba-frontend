@@ -62,7 +62,7 @@ export function TripReportView() {
                   payment.phoneNumber.toString().substring(0, 6) + "*********";
                 return (
                   <tr>
-                    <td>{index}</td>
+                    <td>{index + 1}</td>
                     <td>{maskedPhoneNumber}</td>
                     <td>{true ? "True" : "False"}</td>
                   </tr>

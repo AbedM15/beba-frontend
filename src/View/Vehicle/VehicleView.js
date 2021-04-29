@@ -6,6 +6,7 @@ import {
 import { StyledVehicleView } from "../StyledComponents/StyledVehicle";
 import AddTripView from "../TripView/AddTrip";
 import TripView from "../TripView/TripView";
+import { getTotalVehicleIncome } from "./vehicleCommands";
 
 export default function VehicleView({ vehicle, vehicleIndex, user, setUser }) {
   const [openTrips, setOpenTrips] = useState(false);
@@ -15,7 +16,10 @@ export default function VehicleView({ vehicle, vehicleIndex, user, setUser }) {
     <StyledVehicleView>
       <div>
         <div className="vehicle-header">
-          <h3>Plate: {vehicle.numberPlate}</h3>
+          <div>
+            <h3>Plate: {vehicle.numberPlate}</h3>
+            <p>Total vehicle income: {getTotalVehicleIncome(vehicle)}</p>
+          </div>
           <StyledButton onClick={() => setShowAddTrip(true)}>
             Add trip
           </StyledButton>

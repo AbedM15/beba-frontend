@@ -52,6 +52,9 @@ export function Dashboad() {
           <StyledButton onClick={() => setShowAddVehicleModal(true)}>
             Add Vehicle
           </StyledButton>
+          <StyledButton onClick={() => history.push("/report/customer/trips")}>
+            Customer Report
+          </StyledButton>
           <StyledButton
             onClick={() => {
               localStorage.removeItem("accessToken");
