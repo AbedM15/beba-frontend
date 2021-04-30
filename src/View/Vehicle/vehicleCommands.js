@@ -23,8 +23,13 @@ export function getTotalVehicleIncome(vehicle) {
   const payments = vehicle.trips
     .flatMap((trip) => trip.payments)
     .map((payment) => {
-      if (payment.paid === true) return parseInt(payment.amount);
+      if (payment.paid === true) {
+        return parseInt(payment.amount);
+      } else {
+        return 0;
+      }
     });
+  console.log(payments);
 
   return payments.reduce((acc, curr) => {
     return acc + curr;
