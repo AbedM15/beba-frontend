@@ -84,7 +84,11 @@ export function Dashboad() {
           }}
           show={showAddVehicleModal}
         >
-          <AddVehicle setUser={setUser} user={user} />
+          <AddVehicle
+            setUser={setUser}
+            user={user}
+            setShow={setShowAddVehicleModal}
+          />
         </StyledOverlay>
       </StyledDashboardContainer>
     );

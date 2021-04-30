@@ -7,6 +7,7 @@ export class Payment {
     this.amount = amount;
     this.phoneNumber = phoneNumber;
     this.fullyPaid = false;
+    this.paymentDescription = null;
     this.id = v4();
   }
 }

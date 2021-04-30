@@ -5,7 +5,8 @@ import { Payment } from "../../Logic/Payments/Payment";
 import { StyledAddPayment } from "../StyledComponents/StyledPayment";
 
 export default function AddPayment({ user, setUser, vehicleIndex, tripIndex }) {
-  const [payment, setPayment] = useState(new Payment(20, ""));
+  const AMOUNT = user.vehicles[vehicleIndex].trips[tripIndex].fare;
+  const [payment, setPayment] = useState(new Payment(AMOUNT, ""));
   const seatsRemaining =
     user.vehicles[vehicleIndex].numberOfSeats -
     user.vehicles[vehicleIndex].trips[tripIndex].payments.length;
@@ -51,7 +52,7 @@ export default function AddPayment({ user, setUser, vehicleIndex, tripIndex }) {
                   );
                 })
               );
-              setPayment(new Payment(20, ""));
+              setPayment(new Payment(AMOUNT, ""));
             }
             const tripId = user.vehicles[vehicleIndex].trips[tripIndex].id;
             //we send a request to the server asking it to add payment to a certain trip

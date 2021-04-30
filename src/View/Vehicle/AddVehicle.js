@@ -4,7 +4,7 @@ import { Vehicle } from "../../Logic/Vehicle/Vehicle";
 import { StyledAddVehicle } from "../StyledComponents/StyledVehicle";
 import { addVehicle } from "./vehicleCommands";
 
-export default function AddVehicle({ setUser, user }) {
+export default function AddVehicle({ setUser, user, setShow }) {
   const [vehicle, setVehicle] = useState(new Vehicle("", ""));
   const [error, setError] = useState("");
   return (
@@ -60,6 +60,7 @@ export default function AddVehicle({ setUser, user }) {
             //we send a request to the server to add a vehicle
             const { data: response } = await addVehicle(vehicle);
             if (response.success) {
+              setShow(false);
             } else {
               throw new Error(response.message);
             }
