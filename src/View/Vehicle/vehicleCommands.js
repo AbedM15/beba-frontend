@@ -22,7 +22,9 @@ export async function addVehicle(vehicle) {
 export function getTotalVehicleIncome(vehicle) {
   const payments = vehicle.trips
     .flatMap((trip) => trip.payments)
-    .map((payment) => payment.amount);
+    .map((payment) => {
+      if (payment.paid === true) return payment.amount;
+    });
 
   return payments.reduce((acc, curr) => {
     return acc + curr;
