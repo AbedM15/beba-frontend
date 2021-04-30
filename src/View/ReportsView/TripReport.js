@@ -64,7 +64,7 @@ export function TripReportView() {
                   <tr>
                     <td>{index + 1}</td>
                     <td>{maskedPhoneNumber}</td>
-                    <td>{true ? "True" : "False"}</td>
+                    <td>{payment.paid ? "True" : "False"}</td>
                   </tr>
                 );
               })}
